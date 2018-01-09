@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+        <div class="thin-panel">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h3>Detalle vino</h3>
+                </div>
+                <div>
+                    
+                    <a href="#" id="editarBtn" class="btn btn-outline-warning"><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;&nbsp;Editar</a>
+                    <a href="index.php?controller=bodega&action=detalle&id={{bodega}}" class="btn btn-outline-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Volver</a>
+                    <a class="btn btn-outline-danger" href="index.php?controller=bodega&action=borrar&id={{vino.id}}&bodega={{bodega}}"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Borrar</a>
+                </div>
+            </div>
+            <hr/>
+            <form action="index.php?controller=vino&action=actualizar" method="post">
+              <input type="hidden" name="id" value="{{vino.id}}"/>
+              <input type="hidden" name="bodega" value="{{bodega}}"/>
+              
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input disabled type="text" name="nombre" class="form-control" id="nombre" value="{{vino.nombre}}">
+              </div>
+
+              <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <textarea disabled class="form-control" name="descripcion" id="descripcion" rows="3">{{vino.descripcion}}</textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="ano">Año</label>
+                <input  disabled type="text" name="ano" class="form-control" id="ano" value="{{vino.ano}}">
+              </div>
+
+              <div class="form-group">
+                <label for="alcohol">Alcohol</label>
+                <input disabled type="text" name="alcohol" class="form-control" id="alcohol" value="{{vino.alcohol}}">
+              </div>
+
+              <div class="form-group">
+                <label for="tipo">Tipo de vino</label>
+                <select disabled class="form-control" id="tipo" name="tipo">
+                  <option value="tinto" {% if vino.tipo == 'tinto' %} selected {% endif %}>Tinto</option>
+                  <option value="blanco" {% if vino.tipo == 'blanco' %} selected {% endif %}>Blanco</option>
+                  <option value="rosado" {% if vino.tipo == 'rosado' %} selected {% endif %}>Rosado</option>
+                </select>
+              </div>
+              
+
+              <button disabled type="submit" class="btn btn-primary">Actualizar Vino</button>
+            </form>
+        </div>    
+
+
+{% endblock content %}

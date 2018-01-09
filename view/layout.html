@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{{titulo}}</title>
+        <!-- Bootstrap -->
+        <link href="./assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <!-- Bootstrap Icons -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <style>
+            .title-box {
+                padding: 3rem 1.5rem 2rem;
+                text-align: center;
+            }
+
+            .btn-nueva {
+              margin: 2px 0 14px 0;
+            }
+
+            .thin-panel {
+                width: 60%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="title-box">
+                <h1>Gestión de Bodegas</h1>
+                <p class="lead">Este proyecto muestra cómo hacer una aplicación web MVC con PHP.<br> El objetivo es msotrar cómo realizar una aplicación utilizando éste patrón de diseño.</p>
+            </div>
+
+            {% block content %} {% endblock %}
+
+
+            <footer class="col-lg-12">
+            <hr/>
+                Ejemplo PHP + PDO + POO + MVC - Jon Vadillo - <a href="http://jonvadillo.es">jonvadillo.es</a> - Copyright &copy; <?php echo  date("Y"); ?>
+            </footer>
+        </div>
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
