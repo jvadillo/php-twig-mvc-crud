@@ -162,7 +162,9 @@ class BodegaController{
             $bodega->setHotel($_POST["hotel"]);
             $save=$bodega->actualizar();
         }
-        header("Location: index.php?controller=bodega&action=detalle&id=" . $_POST["id"]);
+        print json_encode(array("bodega" => $bodega));
+        die;
+        //header("Location: index.php?controller=bodega&action=detalle&id=" . $_POST["id"]);
     }
     
     

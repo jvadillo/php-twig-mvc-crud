@@ -15,7 +15,14 @@
                 </div>
             </div>
             <hr/>
-            <form action="index.php?controller=bodega&action=actualizar" method="post">
+            <div id="mensajeActualizacionOK" class="alert alert-success" role="alert" style="display:none;">
+              <p>Los datos de la bodega se han actualizado correctamente.</p>
+            </div>
+            <div id="mensajeActualizacionMal" class="alert alert-danger" role="error" style="display:none;">
+              <p>Error al intentar actualizar los datos de la bodega.</p>
+            </div>
+
+            <form id="actualizarBodegaForm" action="index.php?controller=bodega&action=actualizar" method="post">
               <input type="hidden" name="id" value="{{bodega.id}}"/>
               <div class="form-group">
                 <label for="nombre">Nombre</label>
