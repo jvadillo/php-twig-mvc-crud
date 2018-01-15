@@ -2,6 +2,7 @@
 //Configuración global
 require_once 'config/global.php';
 require_once 'vendor/autoload.php';
+require_once 'controller/GenericController.php';
 
 //Cargamos el controlador y ejecutamos la accion
 if(isset($_GET["controller"])){

@@ -1,20 +1,11 @@
 <?php
-class VinoController{
+class VinoController extends GenericController{
 
-    private $conectar;
-    private $conexion;
-    private $twig;
 
     public function __construct() {
-		require_once  __DIR__ . "/../core/Conectar.php";
+        parent::__construct();
         require_once  __DIR__ . "/../model/Vino.php";
         
-        $this->conectar=new Conectar();
-        $this->conexion=$this->conectar->conexion();
-
-        $loader = new Twig_Loader_Filesystem('view');
-        $this->twig = new Twig_Environment($loader, array('debug' => true));
-
     }
 
    /**
